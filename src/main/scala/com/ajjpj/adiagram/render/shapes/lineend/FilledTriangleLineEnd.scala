@@ -27,7 +27,11 @@ class FilledTriangleLineEnd(arrowLineLength: Double = 30.0, arrowAngle: Double =
     val tip =  AScreenPos.fromModel(tipRaw, zoom)
     val end0 = AScreenPos.fromModel(tipRaw + (angle + arrowAngle, arrowLineLength), zoom)
     val end1 = AScreenPos.fromModel(tipRaw + (angle - arrowAngle, arrowLineLength), zoom)
+    //fills inner triangle, but excludes the Border
     gc.fillPolygon(Array(end0.x, tip.x, end1.x, end0.x), Array(end0.y, tip.y, end1.y, end0.y), 4);
+    // for the triangleborder
+    gc.strokePolygon(Array(end0.x, tip.x, end1.x, end0.x), Array(end0.y, tip.y, end1.y, end0.y), 4);
+    
   }
 }
 
