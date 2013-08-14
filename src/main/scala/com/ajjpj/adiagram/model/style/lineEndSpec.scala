@@ -33,8 +33,11 @@ object RoundArrowLineEndSpec extends LineEndSpec("Round Arrow", UUID.fromString(
   override val lineEnd = new RoundArrowLineEnd
 }
 
-object FilledTriangleLineEndSpec extends LineEndSpec("Empty Triangle",  UUID.fromString("178b9425-8903-4d71-aaa4-937b27865564")) {
+object FilledTriangleLineEndSpec extends LineEndSpec("Filled Triangle",  UUID.fromString("178b9425-8903-4d71-aaa4-937b27865564")) {
 	override val lineEnd = new FilledTriangleLineEnd
+}
+object EmptyTriangleLineEndSpec extends LineEndSpec("Empty Triangle",  UUID.fromString("3d2af9e0-8425-4ae5-974e-131202ff93e1")) {
+  override val lineEnd = new EmptyTriangleLineEnd
 }
 
 
