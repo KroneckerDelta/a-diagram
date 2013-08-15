@@ -22,7 +22,7 @@ class FilledTriangleLineEnd(arrowLineLength: Double = 30.0, arrowAngle: Double =
 
     gc.setLineWidth(style.width(zoom))
     gc.setLineCap(StrokeLineCap.ROUND)
-    gc.setLineJoin(StrokeLineJoin.ROUND)
+    gc.setLineJoin(StrokeLineJoin.MITER)
     val tipRaw = t(p) + (angle, style.width(Zoom.Identity)/2)
     val tip =  AScreenPos.fromModel(tipRaw, zoom)
     val end0 = AScreenPos.fromModel(tipRaw + (angle + arrowAngle, arrowLineLength), zoom)
