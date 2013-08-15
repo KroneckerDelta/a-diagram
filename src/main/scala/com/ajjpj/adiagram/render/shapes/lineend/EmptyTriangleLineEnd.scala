@@ -24,15 +24,10 @@ class EmptyTriangleLineEnd(arrowLineLength: Double = 30.0, arrowAngle: Double = 
     gc.setLineWidth(style.width(zoom))
     gc.setLineCap(StrokeLineCap.ROUND)
     gc.setLineJoin(StrokeLineJoin.ROUND)
-    println("p: "  + " angle: " + angle + " style: " + style)
     val tipRaw = t(p) + (angle, style.width(Zoom.Identity)/2)
-    println("tipRaw: " +tipRaw)
     val tip =  AScreenPos.fromModel(tipRaw, zoom)
-    println("tip: " +tip)
     val end0 = AScreenPos.fromModel(tipRaw + (angle + arrowAngle, arrowLineLength), zoom)
-    println("end0: " + end0)
     val end1 = AScreenPos.fromModel(tipRaw + (angle - arrowAngle, arrowLineLength), zoom)
-    println("end1: " + end1)
     // save old color for later
     val oldColor = gc.getFill
     gc.setFill(Color.WHITE)
