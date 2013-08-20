@@ -11,11 +11,11 @@ import com.ajjpj.adiagram.ui.{AScreenPos, Zoom}
  * This class creates a fullfilled triangle as a line end.
  * @author Thomas
  */
-class FilledTriangleLineEnd(arrowLineLength: Double = 30.0, arrowAngle: Double = Math.PI/6) extends ALineEnd {
+class FilledRoundedTriangleLineEnd(arrowLineLength: Double = 30.0, arrowAngle: Double = Math.PI/6) extends ALineEnd {
   val sinA = Math.sin(arrowAngle)
 
-  override def shortenLengthUnzoomed(style: LineStyle) = style.widthNoZoom * 1.5 //style.widthNoZoom * .25 //TODO refine this (based on the actual angle)
-  override def width(style: LineStyle, zoom: Zoom) = sinA * arrowLineLength + style.width(zoom)//TODO refine this
+  override def shortenLengthUnzoomed(style: LineStyle) = style.widthNoZoom * 1.5 
+  override def width(style: LineStyle, zoom: Zoom) = sinA * arrowLineLength + style.width(zoom)
 
   override def paint(gc: GraphicsContext, p: APoint, angle: Angle, style: LineStyle, t: Translation, zoom: Zoom) {
     style.applyTo(gc)

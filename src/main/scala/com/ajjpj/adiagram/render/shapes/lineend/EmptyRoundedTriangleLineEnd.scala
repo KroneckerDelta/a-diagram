@@ -12,7 +12,7 @@ import javafx.scene.paint.Color
  * 
  * @author Thomas
  */
-class EmptyTriangleLineEnd(arrowLineLength: Double = 30.0, arrowAngle: Double = Math.PI/6) extends ALineEnd {
+class EmptyRoundedTriangleLineEnd(arrowLineLength: Double = 30.0, arrowAngle: Double = Math.PI/6) extends ALineEnd {
   val sinA = Math.sin(arrowAngle)
 
   override def shortenLengthUnzoomed(style: LineStyle) = 28 // optimal length
